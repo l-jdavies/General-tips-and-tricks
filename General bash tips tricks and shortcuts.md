@@ -143,3 +143,27 @@ Copied from Launch School Tech Talks: Command Line Tips & Tricks (https://launch
 
 ![](2019-11-11-12-27-58.png)
 
+## Add config (dotfiles) to GitHub
+
+To save a copy of your config files and set up a new computer quickly you can add your dotfiles to GitHub. 
+
+Create a new directory and move your config files into it. The create a symbolic link between the files in the new directory and your home directory. Initiate a git repo in the directory and push the dotfiles to GitHub.
+
+For example:
+
+  ```
+  mkdir ~/Config
+  mv ~/.bashrc ~/.screenrc ~/.vimrc ~/Config
+
+  ln -s /home/DAVIEL20/Config/.bashrc ~/
+
+  ln -s /home/DAVIEL20/Config/.screenrc ~/
+
+  ln -s /home/DAVIEL20/Config/.vimrc ~/
+
+  git init
+  # complete process to push dotfiles to GitHub
+  ```
+
+
+
