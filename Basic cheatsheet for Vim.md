@@ -105,10 +105,7 @@ First create the required directory and config file.
 
 ```
 mkdir ~/.vim
-
-
 vim ~/.vimrc
-
 ```
 
 I used the `Vundle` package manager: https://github.com/VundleVim/Vundle.vim. Follow the instructions to install. Once you've listed your plugins in `.vimrc`, saved the file then in the `command/normal` mode type `:PluginInstall` to install the plugins. Restart the shell to see changes. 
@@ -122,9 +119,7 @@ Need to check if clipboard support is available:
 From the console, type:
 
 ```
-
 vim --version | grep clipboard
-
 ```
 
 If you see +clipboard or +xterm_clipboard, you are good to go. If it's `-clipboard` and `-xterm_clipboard`, you will need to look for a version of Vim that was compiled with clipboard support. On Debian and Ubuntu, to obtain clipboard support install the packages `vim-gtk` or `vim-gnome` (not `vim-tiny`).
