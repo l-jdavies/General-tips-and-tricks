@@ -90,6 +90,23 @@ Summary:
 * `P` paste text on the current line.
 * `y` yank text into the copy buffer
 
+The commands above are for copy and pasting within vim. The enable copy and pasting between vim and the system keyboard I followed instructions from: https://www.reddit.com/r/bashonubuntuonwindows/comments/be2q3l/how_do_i_copy_whole_text_from_vim_to_clipboard_at/
+
+Basically you add the following to .vimrc file:
+
+```
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+      autocmd!
+      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+```
+
+
 ## Save and quit
 
 In the command mode, enter `:` and you’ll see a line at the bottom of the screen with a cursor ready to take input.
