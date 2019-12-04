@@ -8,10 +8,12 @@ Notes taken from: https://www.linux.com/tutorials/vim-101-beginners-guide-vim/
 
 Open/create file with the command:
 
-	```
-	vim <filename>
-	```
+```
+vim <filename>
+
+```
 Vim will open in `command` mode. This means when you enter `j` the character won't be entered, instead this will issue the command to move the cursor down one line.
+
 
 ## Insert mode
 
@@ -46,11 +48,13 @@ In command mode:
 * `x` deletes the character cursor is on
 * `u` undo previous command
 * `ctrl-r` undo the undo!
-* `dw` delete word from the cursor
+* `dw` delete word from the cursor to end of word
+* `db` delete word from cursor to start of word
 * `d0` delete to beginning of the line
 * `d$` delete to end of the line
 * `dgg` delete to beginning of the file
 * `dG` delete end of the file
+
 
 ## Search and replace
 
@@ -63,10 +67,12 @@ To search and then replace text:
 :%s/text/replacement text/g
 ```
 Will search through the document and replace `text` with `replacement text`. If you want to confirm each instance of the replacement:
-	```
-	:%s/text/replacement text/gc
-	```
+```
+
+:%s/text/replacement text/gc
+```
 ## Copy and pasting
+
 
 Text that's been deleted is saved to the clipboard so you can paste text that's been deleted. 
 
@@ -92,17 +98,21 @@ To write the file you’re editing, enter w. (So, you’ll have :w.) That will w
 
 To quit Vim after you’ve finished, hit :q. Since Vim is your friend, it won’t just pop out on you if you haven’t saved your file. It will say “no write since last change,” and suggest that you add ! to override.
 
+
 ## Adding plugins
 
 First create the required directory and config file.
 
-	```
-	mkdir ~/.vim
+```
+mkdir ~/.vim
 
-	vim ~/.vimrc
-	```
+
+vim ~/.vimrc
+
+```
 
 I used the `Vundle` package manager: https://github.com/VundleVim/Vundle.vim. Follow the instructions to install. Once you've listed your plugins in `.vimrc`, saved the file then in the `command/normal` mode type `:PluginInstall` to install the plugins. Restart the shell to see changes. 
+
 
 
 ## Copy and paste from Windows into vim
@@ -111,11 +121,13 @@ Need to check if clipboard support is available:
 
 From the console, type:
 
-	```
-	vim --version | grep clipboard
-	```
+```
 
-If you see +clipboard or +xterm_clipboard, you are good to go. If it's `-clipboard` and `-xterm_clipboard`, you will need to look for a version of Vim that was compiled with clipboard support. On Debian and Ubuntu, to obtain clipboard support install the packages vim-gtk or vim-gnome (not vim-tiny).
+vim --version | grep clipboard
+
+```
+
+If you see +clipboard or +xterm_clipboard, you are good to go. If it's `-clipboard` and `-xterm_clipboard`, you will need to look for a version of Vim that was compiled with clipboard support. On Debian and Ubuntu, to obtain clipboard support install the packages `vim-gtk` or `vim-gnome` (not `vim-tiny`).
 
 Also, the following should work:
 * `shift + del` to cut
@@ -123,9 +135,10 @@ Also, the following should work:
 * `shift + insert` to paste 
 
 ## Spell check
-  ```
-  :set spell
-  :set nospell
-  ```
+
+```
+:set spell
+:set nospell
+```
 
 
