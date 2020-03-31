@@ -92,6 +92,8 @@ Summary:
 
 The commands above are for copy and pasting within vim. The enable copy and pasting between vim and the system keyboard I followed instructions from: https://www.reddit.com/r/bashonubuntuonwindows/comments/be2q3l/how_do_i_copy_whole_text_from_vim_to_clipboard_at/
 
+Note: you need to enable ctrl + shift + V/C to copy and paste within WSL https://www.howtogeek.com/353200/how-to-enable-copy-and-paste-keyboard-shortcuts-in-windows-10s-bash-shell/
+
 Basically you add the following to .vimrc file after you've checked to see if you've got clipboard support.
 ```
 vim --version | grep clipboard
