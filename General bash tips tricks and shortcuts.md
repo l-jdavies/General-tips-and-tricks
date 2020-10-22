@@ -165,5 +165,11 @@ For example:
   # complete process to push dotfiles to GitHub
   ```
 
+## Search directory recursively for a file that contains a particular string and ignore binary files
+`-R`: search recursively
+`-I`: ignore binary files
 
+```
+grep -RI 'search term'
+```
 
